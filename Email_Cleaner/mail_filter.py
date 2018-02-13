@@ -3,13 +3,13 @@ import email
 class email_bot:
 	def __init__(self,config_filename, keyword_filename):
 		config_file = open(config_filename,'r')
-		self.username = config_file.readline()
-		self.password = config_file.readline()
-		self.host = "imap.gmail.com"
-		self.port = 993
+		self.host = config_file.readline().strip()
+		self.port = config_file.readline().strip()
+		self.username = config_file.readline().strip()
+		self.password = config_file.readline().strip()
 		self.keywords = open(keyword_filename,'r').read().split()
 
-	def establish_connection(self,):
+	def establish_connection(self):
 		self.mail_client = imaplib.IMAP4_SSL(self.host,self.port)
 		try:
 			self.mail_client.login(self.username, self.password)
