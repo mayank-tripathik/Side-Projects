@@ -75,7 +75,7 @@ class email_bot:
 CONFIG_FILENAME = "config_user"
 
 # This file contains words that needs to be in the subject to delete it
-KEYWORD_FILENAME = "cuss_words.txt"
+KEYWORD_FILENAME = "cuss_words"
 
 # Getting instance of email bot
 email_autobot = email_bot(CONFIG_FILENAME,KEYWORD_FILENAME)
